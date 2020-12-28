@@ -1,0 +1,43 @@
+---
+layout: page
+---
+
+<style>
+    .post-title-archive {
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 1.125rem;
+        font-weight: normal;
+        color: #404040;
+        display: inline;
+    }
+
+    .post-title-archive:hover {
+        color: {{ site.hover-col | default: "#0085A1" }};
+    }
+
+    .post-date-archive {
+        font-family: 'Nunito', sans-serif;
+        font-style: italic;
+        color: #808080;
+        display: inline;
+        float:right;
+    }
+</style>
+
+{{ content }}
+
+{% assign posts = paginator.posts | default: site.posts %}
+
+<ul style="list-style:none; padding:0">
+    {% for post in posts %}
+    <li>
+        <a style="text-decoration:none" href="{{ post.url | absolute_url }}">
+            <h2 class="post-title-archive">{{ post.title }}</h2>
+        </a>
+        <span class="post-date-archive">
+            {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+            {{ post.date | date: date_format }}
+        </span>
+    </li>
+    {% endfor %}
+</ul>

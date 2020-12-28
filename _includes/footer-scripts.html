@@ -1,0 +1,50 @@
+{% if layout.common-ext-js %}
+  {% for js in layout.common-ext-js %}
+    {% include ext-js.html js=js %}
+  {% endfor %}
+{% endif %}
+
+{% if layout.common-js %}
+  {% for js in layout.common-js %}
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    {% if js contains 'jquery' %}
+      <script>
+        if (typeof jQuery == 'undefined') {
+          document.write('<script src="{{ js | relative_url }}"></scr' + 'ipt>');
+        }
+      </script>
+    {% else %}
+      <script src="{{ js | relative_url }}"></script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if site.site-js %}
+  {% for js in site.site-js %}
+    <script src="{{ js | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
+{% if page.ext-js %}
+  {% for js in page.ext-js %}
+    {% include ext-js.html js=js %}
+  {% endfor %}
+{% endif %}
+
+{% if page.js %}
+  {% for js in page.js %}
+    <script src="{{ js | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
+{% if page.mathjax %}
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script>
+    $(window).on("load", function() {
+      $('mjx-container[display=true]').wrap('<div style="overflow-x:auto"></div>')
+      //$(window).onload = null
+    })
+  </script>
+{% endif %}
