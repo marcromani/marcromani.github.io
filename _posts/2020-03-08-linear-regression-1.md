@@ -86,7 +86,7 @@ We'll simulate a bunch of noisy data collected from a one-dimensional hidden pro
 
 $$f(x) = 100\sin(x) - 2x^2 + 200\cos^2(x) + 70x\,,$$
 
-and we'll try to fit a fifth degree polynomial to it. That is, we'll augment our one-dimensional input samples with basis functions $$\{1, x^2, x^3, x^4, x^5\}$$. The code within the provided notebook below should be self-explanatory.
+and we'll try to fit a fifth degree polynomial to it. That is, we'll augment our one-dimensional input samples with basis functions $$\{1, x^2, x^3, x^4, x^5\}$$. The code in the provided notebook below should be self-explanatory.
 
 {% gist f4efb5e12bed97e03e553b5f0ae8484d example_1d.ipynb %}
 
