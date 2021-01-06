@@ -63,6 +63,6 @@ $$n > 100^{d} \, c_\alpha^2 \, \sigma^2$$
 
 samples. As an exercise, I drew $$20$$ samples from a Gaussian distribution and built a confidence interval at confidence level $$0.9$$ for $$\mu$$. I repeated this process $$50$$ times and made this figure:
 
-![Confidence interval sampling](/assets/img/confidence_intervals.png){: .center width="550px"}
+![Confidence interval sampling](https://user-images.githubusercontent.com/14805305/103790058-04e2c980-5041-11eb-9fd9-b97c80767766.png){: .center width="550px"}
 
-As you can see, in $$7$$ of the runs the obtained interval does not contain $$\mu$$. Any of them could be an actual experiment embedded in another process that relies on the constructed interval. Also, note that at this confidence level you would expect around $$5$$ of the $$50$$ runs not to provide an appropriate interval, so the results are consistent. You can find the code used to make this figure in the blog's repository.
+As you can see, in $$7$$ of the runs the obtained interval does not contain $$\mu$$. Any of them could be an actual experiment embedded in another process that relies on the constructed interval. Also, note that at this confidence level you would expect around $$5$$ of the $$50$$ runs not to provide an appropriate interval, so the results are consistent. You can explore and download the notebook used to make this figure [here](https://gist.github.com/marcromani/b9f3e70ce0e8b93822c0c032356ae114#file-confidence_intervals-ipynb).
