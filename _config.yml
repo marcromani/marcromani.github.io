@@ -221,6 +221,7 @@ exclude:
   - docs/
 
 plugins:
+  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
 
