@@ -7,9 +7,11 @@ subtitle: A brief note
 #thumbnail-img: /assets/img/linear-regression.png
 #share-img: /assets/img/path.jpg
 tags: [statistics]
+share-title: true
+last-updated: 2021-04-29
 ---
 
-This is going to be a somewhat informal discussion leaving technical details behind so that the main concepts are clear and easy to digest. We'll do that on a very simple setting provided by our good old Gaussian distribution. Say you have a bunch of data that you know is distributed as a Gaussian. Specifically, you have $$n$$ observations $$x_1, \ldots, x_n$$ sampled independently from a Gaussian distribution $$N(\mu, \sigma^2)$$, and you know $$\sigma$$ but you don't know $$\mu$$. How do you estimate $$\mu$$? Since $$\mu$$ is the expectation of this distribution a natural estimate is
+The frequentist confidence interval is a fundamental tool in statistics that provides a way to make inferences about the values of parameters of interest whenever there is a (quantifiable) degree of uncertainty in the studied process. However, it is common to have misconceptions about how it should be interpreted. We'll try to elucidate this on a very simple setting provided by our good old Gaussian distribution. Say you have a bunch of data that you know is distributed as a Gaussian. Specifically, you have $$n$$ observations $$x_1, \ldots, x_n$$ sampled independently from a Gaussian distribution $$N(\mu, \sigma^2)$$, and you know $$\sigma$$ but you don't know $$\mu$$. How do you estimate $$\mu$$? Since $$\mu$$ is the expectation of this distribution a natural estimate is
 
 $$\overline{x} := \frac{1}{n}\sum_{i = 1}^n x_i\,.$$
 

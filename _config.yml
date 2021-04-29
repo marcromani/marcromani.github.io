@@ -62,7 +62,7 @@ social-network-links:
 
 # If you want to show a link to an RSS in the footer, add the site description here.
 # If you don't want to show an RSS link, remove the following line.
-rss-description: Ramblings on optimization theory, real analysis, statistical learning theory and programming.
+rss-description: Ramblings on machine learning, real analysis, optimization, statistical learning theory and programming.
 
 # --- General options --- #
 

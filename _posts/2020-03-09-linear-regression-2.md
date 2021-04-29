@@ -7,6 +7,7 @@ subtitle: The multivariate case
 #thumbnail-img: /assets/img/linear-regression.png
 #share-img: /assets/img/path.jpg
 tags: [linear regression, machine learning, linear algebra]
+share-title: true
 ---
 
 The discussion in the [previous post]({% post_url 2020-03-08-linear-regression-1 %}) can be generalized to the case where a linear model
