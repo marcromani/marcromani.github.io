@@ -21,7 +21,7 @@ should be estimated. In this case, $$\boldsymbol{\Omega}$$ is an $$\left(n, m\ri
 
 $${\boldsymbol{g}_{\boldsymbol{\Omega}}}_i\left(\boldsymbol{x}\right) = g_{\boldsymbol{\Omega}_i}\left(\boldsymbol{x}\right) = {\boldsymbol{\Omega}_i}^T \boldsymbol{x}\,.$$
 
-In particular, given a set of samples $$\left(\boldsymbol{x}_1, \boldsymbol{y}_1\right), \ldots, \left(\boldsymbol{x}_k, \boldsymbol{y}_k\right)$$, the estimation of a column of $$\boldsymbol{\Omega}$$ is an independent problem, i.e., it does not depend on the other columns. Indeed, we wish to solve $$m$$ optimization problems
+In particular, given a sample $$\left(\boldsymbol{x}_1, \boldsymbol{y}_1\right), \ldots, \left(\boldsymbol{x}_k, \boldsymbol{y}_k\right)$$, the estimation of a column of $$\boldsymbol{\Omega}$$ is an independent problem, i.e., it does not depend on the other columns. Indeed, we wish to solve $$m$$ optimization problems
 
 $$\min_{\boldsymbol{\Omega}_i} L\left(\boldsymbol{\Omega}_i\right) = \min_{\boldsymbol{\Omega}_i} \sum_s \left(g_{\boldsymbol{\Omega}_i}\left(\boldsymbol{x}_s\right)-{\boldsymbol{y}_s}_i\right)^2 = \min_{\boldsymbol{\Omega}_i} \sum_s \left({\boldsymbol{\Omega}_i}^T \boldsymbol{x}_s - {\boldsymbol{y}_s}_i\right)^2\,.$$
 

@@ -10,7 +10,7 @@ tags: [linear regression, machine learning, linear algebra]
 share-title: true
 ---
 
-This is one of the simplest examples of a machine learning approach to solve a particular problem. Assume that you are trying to model an unknown process $$f\colon \mathbb{R}^n \to \mathbb{R}$$ and that you have collected a bunch of input/output samples $$\left(\boldsymbol{x}_1, y_1\right), \ldots, \left(\boldsymbol{x}_k, y_k\right)$$ from that process, that is, $$y_i = f\left(\boldsymbol{x}_i\right)$$ for all $$i$$. More generally, it could also be assumed that the data may be corrupted by some form of noise. For example, in the presence of additive noise, $$y_i = f\left(\boldsymbol{x}_i\right) + n_i$$ for all $$i$$, where $$n_i$$ is a random (does not depend on $$f$$) unknown scalar. Under the further assumption that the unknown process $$f$$ can be modeled as a linear map
+This is one of the simplest examples of a machine learning approach to solve a particular problem. Assume that you are trying to model an unknown process $$f\colon \mathbb{R}^n \to \mathbb{R}$$ and that you have collected a bunch of input/output pairs $$\left(\boldsymbol{x}_1, y_1\right), \ldots, \left(\boldsymbol{x}_k, y_k\right)$$ from that process, that is, $$y_i = f\left(\boldsymbol{x}_i\right)$$ for all $$i$$. More generally, it could also be assumed that the data may be corrupted by some form of noise. For example, in the presence of additive noise, $$y_i = f\left(\boldsymbol{x}_i\right) + n_i$$ for all $$i$$, where $$n_i$$ is a random (does not depend on $$f$$) unknown scalar. Under the further assumption that the unknown process $$f$$ can be modeled as a linear map
 
 $$\begin{align*}
 g_{\boldsymbol{\omega}}\colon \mathbb{R}^n & \to \mathbb{R}\\
@@ -21,7 +21,7 @@ linear regression—by *least squares*—aims to find $$\boldsymbol{\omega}$$ su
 
 $$\min_{\boldsymbol{\omega}} L\left(\boldsymbol{\omega}\right) := \min_{\boldsymbol{\omega}} \sum_i \left(g_{\boldsymbol{\omega}}\left(\boldsymbol{x}_i\right)-y_i\right)^2 = \min_{\boldsymbol{\omega}} \sum_i \left(\boldsymbol{\omega}^T \boldsymbol{x}_i - y_i\right)^2\,.$$
 
-In words, we are trying to estimate the parameters $$\boldsymbol{\omega}$$ (and hence the function $$g_{\boldsymbol{\omega}}$$) such that the output $$g_{\boldsymbol{\omega}}\left(\boldsymbol{x}_i\right)$$ of the estimated function when we feed it $$\boldsymbol{x}_i$$ is as close as possible (in the squared difference sense) to the associated observed output $$y_i$$, across all available samples. In an upcoming post we'll see a principled justification as to why we minimize, generally, the sum of the squared residuals and not any other quantity (e.g., the sum of the absolute value of the residuals). If we define matrices $$\boldsymbol{X}$$ and $$\boldsymbol{Y}$$ as the matrices that contain the $$k$$ input and output samples as rows, respectively, that is:
+In words, we are trying to estimate the parameters $$\boldsymbol{\omega}$$ (and hence the function $$g_{\boldsymbol{\omega}}$$) such that the output $$g_{\boldsymbol{\omega}}\left(\boldsymbol{x}_i\right)$$ of the estimated function when we feed it $$\boldsymbol{x}_i$$ is as close as possible (in the squared difference sense) to the associated observed output $$y_i$$, across all available sample values. In an upcoming post we'll see a principled justification as to why we minimize, generally, the sum of the squared residuals and not any other quantity (e.g., the sum of the absolute value of the residuals). If we define matrices $$\boldsymbol{X}$$ and $$\boldsymbol{Y}$$ as the matrices that contain the $$k$$ input and output sample values as rows, respectively, that is:
 
 $$\boldsymbol{X} :=
 \begin{pmatrix}
@@ -87,7 +87,7 @@ We'll simulate a bunch of noisy data collected from a one-dimensional hidden pro
 
 $$f(x) = 100\sin(x) - 2x^2 + 200\cos^2(x) + 70x\,,$$
 
-and we'll try to fit a fifth degree polynomial to it. That is, we'll augment our one-dimensional input samples with basis functions $$\{1, x^2, x^3, x^4, x^5\}$$. The code in the provided notebook below should be self-explanatory.
+and we'll try to fit a fifth degree polynomial to it. That is, we'll augment our one-dimensional inputs with basis functions $$\{1, x^2, x^3, x^4, x^5\}$$. The code in the provided notebook below should be self-explanatory.
 
 {% gist f4efb5e12bed97e03e553b5f0ae8484d example_1d.ipynb %}
 
