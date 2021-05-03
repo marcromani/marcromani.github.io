@@ -7,7 +7,7 @@ subtitle: A brief note
 #thumbnail-img: /assets/img/linear-regression.png
 #share-img: /assets/img/path.jpg
 tags: [statistics]
-share-title: true
+# share-title: true
 last-updated: 2021-04-29
 ---
 

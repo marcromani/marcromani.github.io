@@ -7,7 +7,7 @@ subtitle: Modulo a factor of 2
 #thumbnail-img: /assets/img/linear-regression.png
 #share-img: /assets/img/path.jpg
 tags: [machine learning, statistics, statistical learning theory]
-share-title: true
+# share-title: true
 last-updated: 2021-05-03
 ---
 

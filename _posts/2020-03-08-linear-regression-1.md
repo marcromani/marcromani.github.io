@@ -7,7 +7,7 @@ subtitle: A first look
 #thumbnail-img: /assets/img/linear-regression.png
 #share-img: /assets/img/path.jpg
 tags: [linear regression, machine learning, linear algebra]
-share-title: true
+# share-title: true
 ---
 
 This is one of the simplest examples of a machine learning approach to solve a particular problem. Assume that you are trying to model an unknown process $$f\colon \mathbb{R}^n \to \mathbb{R}$$ and that you have collected a bunch of input/output pairs $$\left(\boldsymbol{x}_1, y_1\right), \ldots, \left(\boldsymbol{x}_k, y_k\right)$$ from that process, that is, $$y_i = f\left(\boldsymbol{x}_i\right)$$ for all $$i$$. More generally, it could also be assumed that the data may be corrupted by some form of noise. For example, in the presence of additive noise, $$y_i = f\left(\boldsymbol{x}_i\right) + n_i$$ for all $$i$$, where $$n_i$$ is a random (does not depend on $$f$$) unknown scalar. Under the further assumption that the unknown process $$f$$ can be modeled as a linear map
