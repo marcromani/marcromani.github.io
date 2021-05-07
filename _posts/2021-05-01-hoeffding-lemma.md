@@ -8,7 +8,7 @@ subtitle: Modulo a factor of 2
 #share-img: /assets/img/path.jpg
 tags: [machine learning, statistics, statistical learning theory]
 # share-title: true
-last-updated: 2021-05-03
+last-updated: 2021-05-07
 ---
 
 Hoeffding's lemma is an elementary yet pivotal result in empirical process theory that allows the construction of exponential measure concentration bounds such as Hoeffding's inequality. The standard proof of the lemma does not require sophisticated tools but, in my opinion, it's not very elegant either. In fact, the proof uses an ad hoc, very calculus-flavored argument to arrive at the result; see, for example, [Mohri, Mehryar, et al. *Foundations of Machine Learning*](https://mitpress.ublish.com/ereader/7093/?preview=#page/437) or [Wikipedia](https://www.wikiwand.com/en/Hoeffding's_lemma). An alternative proof appears in [Maxim Raginsky's notes](http://maxim.ece.illinois.edu/teaching/fall14/notes/concentration.pdf) but is somewhat convoluted. On the other hand, a very nice proof of a weaker version of the lemma can be found in [John Duchi's notes](http://cs229.stanford.edu/extra-notes/hoeffding.pdf).
