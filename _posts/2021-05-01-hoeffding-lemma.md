@@ -8,7 +8,7 @@ subtitle: Modulo a factor of 2
 #share-img: /assets/img/path.jpg
 tags: [machine learning, statistics, statistical learning theory]
 # share-title: true
-last-updated: 2021-05-07
+last-updated: 2023-06-17
 ---
 
 Hoeffding's lemma is an elementary yet pivotal result in empirical process theory that allows the construction of exponential measure concentration bounds such as Hoeffding's inequality. The standard proof of the lemma does not require sophisticated tools but, in my opinion, it's not very elegant either. In fact, the proof uses an ad hoc, very calculus-flavored argument to arrive at the result; see, for example, [Mohri, Mehryar, et al. *Foundations of Machine Learning*](https://mitpress.ublish.com/ereader/7093/?preview=#page/437) or [Wikipedia](https://www.wikiwand.com/en/Hoeffding's_lemma). An alternative proof appears in [Maxim Raginsky's notes](http://maxim.ece.illinois.edu/teaching/fall14/notes/concentration.pdf) but is somewhat convoluted. On the other hand, a very nice proof of a weaker version of the lemma can be found in [John Duchi's notes](http://cs229.stanford.edu/extra-notes/hoeffding.pdf).
@@ -47,19 +47,17 @@ This concludes the proof.
 
     The inequality holds because $$e^t \geq 1+t$$ for every $$t \in \mathbb{R}$$.
 
-[^3]: We need to bound $\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon}$ which may not be obvious, as noted by Yihong Wu. In fact, a naive approach would be to use the absolute value of that term as bound, but then we couldn't exploit the vanishing expectation $\mathbb{E}(Y^3)$ further down. A better argument is to note that, for $\lambda \geq 0$:
-\begin{itemize}
-    \item $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
-    \item $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
-\end{itemize}
+[^3]: For the first inequality we bound $\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon}$, which may not be obvious, as noted by Yihong Wu. In fact, a natural approach would be to use the absolute value of that term as bound, but then we couldn't exploit the vanishing expectation $\mathbb{E}(Y^3)$ further down. A better argument is to note that, for $\lambda \geq 0$:
+- $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
+- $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
+
 So that, in both cases,
 $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}\,.$$
 
 Similarly, for $\lambda < 0$:
-\begin{itemize}
-    \item $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
-    \item $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
-\end{itemize}
+- $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
+- $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
+
 So that, again,
 $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}$$
 for $y \in \mathbb{R}$.
