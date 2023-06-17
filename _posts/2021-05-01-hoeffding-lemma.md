@@ -64,4 +64,4 @@ This concludes the proof.
 
     So that, again,
     $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}$$
-    for $$y \in \mathbb{R}$$.
+    for every $$y \in \mathbb{R}$$.
