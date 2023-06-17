@@ -19,14 +19,14 @@ We start with the usual assumptions that $$\mathbb{P}(a \leq X \leq b) = 1$$ and
 
 $$\mathbb{E}_X\!\left(e^{\lambda X}\right) = \mathbb{E}_X\!\left(e^{\lambda (X - \mathbb{E}_{X'}(X'))}\right) \leq \mathbb{E}_{X, X'}\!\left(e^{\lambda (X - X')}\right)\,.$$
 
-The bound on the right is an application of Jensen's inequality and can also be derived directly[^2]. Let $$Y := X - X'$$, of course, $$\mathbb{P}(a-b \leq Y \leq b-a) = 1$$ and $$\mathbb{E}(Y) = 0$$. The key observation is that, in fact, since $$Y$$ is symmetric $$\mathbb{E}(Y^r) = 0$$ for every odd $$r$$. By Taylor's theorem, for every $$\lambda \in \mathbb{R}$$ and $$y \in [a-b, b-a]$$ there exists $$\varepsilon \in [a-b, b-a]$$ such that
+The bound on the right is an application of Jensen's inequality and can also be derived directly[^2]. Let $$Y := X - X'$$, of course, $$\mathbb{P}(a-b \leq Y \leq b-a) = 1$$ and $$\mathbb{E}(Y) = 0$$. The key observation is that, in fact, since $$Y$$ is symmetric $$\mathbb{E}(Y^r) = 0$$ for every odd $$r$$. By Taylor's theorem, for every $$\lambda \in \mathbb{R}$$ and $$y \in [a-b, b-a]$$ there exists $$\varepsilon \in [\min(0, y), \max(0, y)]$$ such that[^3]
 
-$$e^{\lambda y} = 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{2|\lambda| (b-a)}\,.$$
+$$e^{\lambda y} = 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{\lambda y} \leq 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{|\lambda| (b-a)}\,.$$
 
 It follows that
 
 $$\begin{align*}
-\mathbb{E}\!\left(e^{\lambda Y}\right) &\leq 1 + \lambda \mathbb{E}(Y) + \frac{\lambda^2}{2} \mathbb{E}(Y^2) + \frac{\lambda^3}{6} \mathbb{E}(Y^3)e^{2|\lambda| (b-a)}\\
+\mathbb{E}\!\left(e^{\lambda Y}\right) &\leq 1 + \lambda \mathbb{E}(Y) + \frac{\lambda^2}{2} \mathbb{E}(Y^2) + \frac{\lambda^3}{6} \mathbb{E}(Y^3)e^{|\lambda| (b-a)}\\
 &= 1 + \frac{\lambda^2}{2}\text{Var}(Y)\\
 &= 1 + \lambda^2 \text{Var}(X)\\
 &\leq 1 + \frac{\lambda^2 (b-a)^2}{4}\\
@@ -46,3 +46,20 @@ This concludes the proof.
     $$\mathbb{E}\!\left(e^Z\right) = \mathbb{E}\!\left(e^{(Z-\mathbb{E}(Z)+\mathbb{E}(Z))}\right) = e^{\mathbb{E}(Z)}\mathbb{E}\!\left(e^{(Z-\mathbb{E}(Z))}\right) \geq e^{\mathbb{E}(Z)}\mathbb{E}(1 + Z - \mathbb{E}(Z)) = e^{\mathbb{E}(Z)}\,.$$
 
     The inequality holds because $$e^t \geq 1+t$$ for every $$t \in \mathbb{R}$$.
+
+[^3]: We need to bound $\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon}$ which may not be obvious, as noted by Yihong Wu. In fact, a naive approach would be to use the absolute value of that term as bound, but then we couldn't exploit the vanishing expectation $\mathbb{E}(Y^3)$ further down. A better argument is to note that, for $\lambda \geq 0$:
+\begin{itemize}
+    \item $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
+    \item $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
+\end{itemize}
+So that, in both cases,
+$$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}\,.$$
+
+Similarly, for $\lambda < 0$:
+\begin{itemize}
+    \item $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
+    \item $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
+\end{itemize}
+So that, again,
+$$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}$$
+for $y \in \mathbb{R}$.
