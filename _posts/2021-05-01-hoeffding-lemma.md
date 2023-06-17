@@ -48,16 +48,16 @@ This concludes the proof.
     The inequality holds because $$e^t \geq 1+t$$ for every $$t \in \mathbb{R}$$.
 
 [^3]: For the first inequality we bound $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon}$$, which may not be obvious, as noted by Yihong Wu. In fact, a natural approach would be to use the absolute value of that term as bound, but then we couldn't exploit the vanishing expectation $$\mathbb{E}(Y^3)$$ further down. A better argument is to note that, for $$\lambda \geq 0$$:
-- $$y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$$.
-- $$y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$$.
+    - $$y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$$.
+    - $$y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$$.
 
-So that, in both cases,
-$$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}\,.$$
+    So that, in both cases,
+    $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}\,.$$
 
-Similarly, for $$\lambda < 0$$:
-- $$y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$$.
-- $$y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$$.
+    Similarly, for $$\lambda < 0$$:
+    - $$y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$$.
+    - $$y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$$.
 
-So that, again,
-$$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}$$
-for $$y \in \mathbb{R}$$.
+    So that, again,
+    $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}$$
+    for $$y \in \mathbb{R}$$.
