@@ -21,7 +21,11 @@ $$\mathbb{E}_X\!\left(e^{\lambda X}\right) = \mathbb{E}_X\!\left(e^{\lambda (X -
 
 The bound on the right is an application of Jensen's inequality and can also be derived directly[^2]. Let $$Y := X - X'$$, of course, $$\mathbb{P}(a-b \leq Y \leq b-a) = 1$$ and $$\mathbb{E}(Y) = 0$$. The key observation is that, in fact, since $$Y$$ is symmetric $$\mathbb{E}(Y^r) = 0$$ for every odd $$r$$. By Taylor's theorem, for every $$\lambda \in \mathbb{R}$$ and $$y \in [a-b, b-a]$$ there exists $$\varepsilon \in [\min(0, y), \max(0, y)]$$ such that[^3]
 
-$$e^{\lambda y} = 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{\lambda y} \leq 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{|\lambda| (b-a)}\,.$$
+$$\begin{align*}
+e^{\lambda y} &= 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon}\\
+&\leq 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{\lambda y}\\
+&\leq 1 + \lambda y + \frac{\lambda^2}{2} y^2 + \frac{\lambda^3}{6} y^3 e^{|\lambda| (b-a)}\,.
+\end{align*}$$
 
 It follows that
 
