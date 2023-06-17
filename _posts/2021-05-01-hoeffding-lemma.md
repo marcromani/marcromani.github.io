@@ -11,7 +11,7 @@ tags: [machine learning, statistics, statistical learning theory]
 last-updated: 2023-06-17
 ---
 
-Hoeffding's lemma is an elementary yet pivotal result in empirical process theory that allows the construction of exponential measure concentration bounds such as Hoeffding's inequality. The standard proof of the lemma does not require sophisticated tools but, in my opinion, it's not very elegant either. In fact, the proof uses an ad hoc, very calculus-flavored argument to arrive at the result; see, for example, [Mohri, Mehryar, et al. *Foundations of Machine Learning*](https://mitpress.ublish.com/ereader/7093/?preview=#page/437) or [Wikipedia](https://www.wikiwand.com/en/Hoeffding's_lemma). An alternative proof appears in [Maxim Raginsky's notes](http://maxim.ece.illinois.edu/teaching/fall14/notes/concentration.pdf) but is somewhat convoluted. On the other hand, a very nice proof of a weaker version of the lemma can be found in [John Duchi's notes](http://cs229.stanford.edu/extra-notes/hoeffding.pdf).
+Hoeffding's lemma is an elementary yet pivotal result in empirical process theory that allows the construction of exponential measure concentration bounds such as Hoeffding's inequality. The standard proof of the lemma does not require sophisticated tools but, in my opinion, it's not very elegant either. In fact, the proof uses an ad hoc, very calculus-flavored argument to arrive at the result; see, for example, [Mohri, Mehryar, et al. *Foundations of Machine Learning*](https://mitpress.ublish.com/ebook/foundations-of-machine-learning--2-preview/7093/437) or [Wikipedia](https://www.wikiwand.com/en/Hoeffding's_lemma). An alternative proof appears in [Maxim Raginsky's notes](http://maxim.ece.illinois.edu/teaching/fall14/notes/concentration.pdf) but is somewhat convoluted. On the other hand, a very nice proof of a weaker version of the lemma can be found in [John Duchi's notes](http://cs229.stanford.edu/extra-notes/hoeffding.pdf).
 
 The following proof of Hoeffding's lemma builds on Duchi's approach but, to my knowledge, was never presented before. It is similar to the latter in that a symmetrization technique is employed but does not invoke a Rademacher variable. Since it is not necessary to bound the moment-generating function of such variable—a key step in that proof—a tighter bound is obtained. In this case, we are off by a factor of 2 instead of 4.
 
@@ -47,17 +47,17 @@ This concludes the proof.
 
     The inequality holds because $$e^t \geq 1+t$$ for every $$t \in \mathbb{R}$$.
 
-[^3]: For the first inequality we bound $\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon}$, which may not be obvious, as noted by Yihong Wu. In fact, a natural approach would be to use the absolute value of that term as bound, but then we couldn't exploit the vanishing expectation $\mathbb{E}(Y^3)$ further down. A better argument is to note that, for $\lambda \geq 0$:
-- $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
-- $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$.
+[^3]: For the first inequality we bound $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon}$$, which may not be obvious, as noted by Yihong Wu. In fact, a natural approach would be to use the absolute value of that term as bound, but then we couldn't exploit the vanishing expectation $$\mathbb{E}(Y^3)$$ further down. A better argument is to note that, for $$\lambda \geq 0$$:
+- $$y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$$.
+- $$y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda \varepsilon} \leq y^3 e^{\lambda y}$$.
 
 So that, in both cases,
 $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}\,.$$
 
-Similarly, for $\lambda < 0$:
-- $y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
-- $y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$.
+Similarly, for $$\lambda < 0$$:
+- $$y \geq 0 \, \Rightarrow \, 0 \leq \varepsilon \leq y \, \Rightarrow \, e^{\lambda y} \leq e^{\lambda \varepsilon} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$$.
+- $$y < 0 \, \Rightarrow \, y \leq \varepsilon \leq 0 \, \Rightarrow \, e^{\lambda \varepsilon} \leq e^{\lambda y} \, \Rightarrow \, y^3 e^{\lambda y} \leq y^3 e^{\lambda \varepsilon}$$.
 
 So that, again,
 $$\frac{\lambda^3}{6} y^3 e^{\lambda \varepsilon} \leq \frac{\lambda^3}{6} y^3 e^{\lambda y}$$
-for $y \in \mathbb{R}$.
+for $$y \in \mathbb{R}$$.
